@@ -1,9 +1,9 @@
 import Image from "next/image";
-import { Footer } from "./components/Footer";
-import { Navigation } from "./components/Navigation";
+import { Footer } from "@/components/layout/Footer";
+import { Header } from "@/components/layout/Header";
 import { ScrollReveal } from "./components/ScrollReveal";
 import { ScrollLogoJourney } from "./components/ScrollLogoJourney";
-import { OccasionCylinder, type Occasion } from "./components/OccasionCylinder";
+import { OccasionCylinderCarousel, type Occasion } from "@/components/designs/OccasionCylinderCarousel";
 
 const OCCASIONS: Occasion[] = [
   { title:"Birthdays", number:"01", image:"/occasion-birthdays.png", position:"center 42%", href:"#contact" },
@@ -21,7 +21,7 @@ function GlassNote({ className, icon, title, text }: { className: string; icon: 
 export default function Home() {
   return (
     <>
-      <Navigation />
+      <Header />
       <ScrollLogoJourney />
       <main id="home" className="reference-main">
         <section className="reference-hero">
@@ -57,7 +57,7 @@ export default function Home() {
 
         <section id="occasions" className="home-section occasions-section">
           <ScrollReveal className="section-heading"><span>Made for every moment</span><h2>There’s always a reason<br/>to make it personal.</h2></ScrollReveal>
-          <ScrollReveal effect="scale"><OccasionCylinder occasions={OCCASIONS}/></ScrollReveal>
+          <ScrollReveal effect="scale"><OccasionCylinderCarousel occasions={OCCASIONS}/></ScrollReveal>
         </section>
 
         <section id="gallery" className="home-section gallery-section">

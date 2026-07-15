@@ -5,7 +5,7 @@ import { useEffect, useMemo, useRef } from "react";
 
 export type Occasion = { title:string; number:string; image:string; position:string; href:string };
 
-export function OccasionCylinder({ occasions }: { occasions:Occasion[] }) {
+export function OccasionCylinderCarousel({ occasions }: { occasions:Occasion[] }) {
   const sceneRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const phaseRef = useRef(0);
