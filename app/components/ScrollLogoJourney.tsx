@@ -24,7 +24,7 @@ export function ScrollLogoJourney() {
         <motion.span className="journey-shadow" style={{ scaleX:scale }}/>
         <div className="journey-glow"/>
         <motion.div className="journey-logo-asset" whileHover={{ scale:1.04, rotateY:10 }} transition={{ type:"spring", stiffness:180, damping:16 }}>
-          <Image src="/logo-transparent.png" alt="" width={1080} height={1350} priority/>
+          <Image src="/logo-transparent.png" alt="" width={1080} height={1350} sizes="(max-width: 700px) 44px, 92px" />
         </motion.div>
         <span className="journey-ring ring-a"/>
         <motion.span className="journey-ring ring-b" style={{ rotate:ringRotate }}/>

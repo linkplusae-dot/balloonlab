@@ -94,7 +94,7 @@ export function Header() {
                 width={108}
                 height={135}
                 style={{ scale: "2" }}
-                priority
+                loading="eager"
               />
             </span>
             <strong>

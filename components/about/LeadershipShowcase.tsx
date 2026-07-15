@@ -90,7 +90,7 @@ export function LeadershipShowcase() {
               <div className={styles.leaderImage}>
                 <Image
                   src={image}
-                  alt={`${role} at Balloon Lab`}
+                  alt={`${name}, ${role} at Balloon Lab`}
                   fill
                   sizes="(max-width: 700px) 86vw, (max-width: 1100px) 44vw, 520px"
                   className={index === 0 ? styles.founderCrop : styles.managerCrop}

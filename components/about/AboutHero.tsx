@@ -57,7 +57,7 @@ export function AboutHero() {
         >
           <span className={styles.balloonShine} />
           <span className={styles.logoHalo}>
-            <Image src="/logo-transparent.png" alt="" width={108} height={135} priority />
+            <Image src="/logo-transparent.png" alt="" width={108} height={135} loading="eager" />
           </span>
           <i />
         </motion.div>

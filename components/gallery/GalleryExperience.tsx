@@ -165,7 +165,7 @@ export function GalleryExperience() {
           transition={{ type: "spring", stiffness: 58, damping: 17, delay: 0.16 }}
         >
           <p className={styles.eyebrow}><Camera size={15} aria-hidden="true" /> Balloon Lab gallery</p>
-          <h1 id="gallery-title">Moments made <span>visible.</span></h1>
+          <h1 id="gallery-title">Photo balloon ideas, <span>made visible.</span></h1>
           <p className={styles.heroLead}>Browse photo balloon inspiration for birthdays, love, little ones, events and thoughtful gifting across the UAE.</p>
           <div className={styles.heroActions}>
             <a className={styles.primaryButton} href="#gallery-collection">View the gallery <ArrowRight size={18} /></a>
@@ -183,7 +183,7 @@ export function GalleryExperience() {
           aria-label="A selection of Balloon Lab photo balloon styles"
         >
           <div className={styles.heroHalo} aria-hidden="true" />
-          <div className={`${styles.heroPhoto} ${styles.heroPhotoMain}`}><Image src="/balloon-gallery.png" alt="Three personalized photo balloon styles" fill priority sizes="(max-width: 760px) 88vw, 50vw" /></div>
+          <div className={`${styles.heroPhoto} ${styles.heroPhotoMain}`}><Image src="/balloon-gallery.png" alt="Personalized photo balloons for birthdays, couples and children in the UAE" fill preload sizes="(max-width: 760px) 88vw, 50vw" /></div>
           <div className={`${styles.heroPhoto} ${styles.heroPhotoLeft}`}><Image src="/occasion-love.png" alt="Pink romantic photo balloon" fill sizes="180px" /></div>
           <div className={`${styles.heroPhoto} ${styles.heroPhotoRight}`}><Image src="/occasion-kids.png" alt="Blue kids photo balloon" fill sizes="180px" /></div>
           <span className={styles.heroLens} aria-hidden="true"><Image src="/logo-transparent.png" alt="" width={108} height={135} /></span>
@@ -301,7 +301,7 @@ export function GalleryExperience() {
                 initial={reduceMotion ? false : { opacity: 0, rotateY: 8 }}
                 animate={{ opacity: 1, rotateY: 0 }}
               >
-                <Image src={selectedItem.image} alt={selectedItem.alt} fill sizes="(max-width: 760px) 94vw, 66vw" priority />
+                <Image src={selectedItem.image} alt={selectedItem.alt} fill sizes="(max-width: 760px) 94vw, 66vw" loading="eager" />
               </motion.div>
               <div className={styles.lightboxInfo}>
                 <small>{selectedItem.category} · {selectedItem.tone}</small>

@@ -37,7 +37,7 @@ export function DesignsHero() {
             Your memory, your details, your design
           </motion.span>
           <h1 id="designs-title">
-            Find a Design.
+            Photo Balloon Designs.
             <span>Make It Yours.</span>
           </h1>
           <p>
@@ -75,7 +75,7 @@ export function DesignsHero() {
                 src="/occasion-birthdays.png"
                 alt="Personalized birthday photo balloon design concept"
                 fill
-                priority
+                preload
                 sizes="(max-width: 800px) 88vw, 48vw"
                 style={{ objectFit: "cover", objectPosition: "center 42%" }}
               />

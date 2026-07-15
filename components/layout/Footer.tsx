@@ -21,7 +21,14 @@ const quickLinks = [
   { label: "Contact", href: "/#contact" },
 ];
 
-const occasions = ["Birthdays", "Love & Romance", "Kids", "Events", "Corporate", "Just Because"];
+const occasions = [
+  { label: "Birthdays", href: "/designs?occasion=Birthdays#catalogue" },
+  { label: "Love & Romance", href: "/designs?occasion=Love+%26+Romance#catalogue" },
+  { label: "Kids & Newborns", href: "/designs?occasion=Kids+%26+Newborns#catalogue" },
+  { label: "Events", href: "/designs?occasion=Events#catalogue" },
+  { label: "Corporate Gifting", href: "/designs?occasion=Corporate+Gifting#catalogue" },
+  { label: "Just Because", href: "/designs?occasion=Just+Because#catalogue" },
+];
 
 const parentVariants: Variants = {
   hidden: {},
@@ -95,7 +102,7 @@ export function Footer() {
         <motion.section className="footer-3d-card" variants={reduceMotion ? undefined : cardVariants} custom={-1}>
           <p className="footer-card-label">Celebrate</p>
           <h3>Occasions</h3>
-          <ul>{occasions.map((item) => <li key={item}><Link href="/designs">{item}<ArrowUpRight size={12} /></Link></li>)}</ul>
+          <ul>{occasions.map((item) => <li key={item.label}><Link href={item.href}>{item.label}<ArrowUpRight size={12} /></Link></li>)}</ul>
         </motion.section>
 
         <motion.section className="footer-3d-card footer-contact-card" variants={reduceMotion ? undefined : cardVariants} custom={1}>
@@ -113,10 +120,10 @@ export function Footer() {
       <motion.div className="footer-3d-bottom" variants={reduceMotion ? undefined : cardVariants} custom={0}>
         <div><p>© 2026 Balloon Lab. All rights reserved.</p><small>Personalized photo balloons in UAE</small></div>
         <nav aria-label="Social links">
-          <a href="https://instagram.com/balloonlabae" aria-label="Instagram"><FaInstagram size={18} /></a>
-          <a href="https://www.tiktok.com/@balloonlabae" aria-label="TikTok"><FaTiktok size={17} /></a>
+          <a href="https://instagram.com/balloonlabae" rel="me external" aria-label="Balloon Lab on Instagram"><FaInstagram size={18} /></a>
+          <a href="https://www.tiktok.com/@balloonlabae" rel="me external" aria-label="Balloon Lab on TikTok"><FaTiktok size={17} /></a>
           <a href="https://wa.me/971561315511" aria-label="WhatsApp"><FaWhatsapp size={19} /></a>
-          <a href="https://www.linkedin.com/in/balloonlab-ae-95bb74420/" aria-label="LinkedIn"><FaLinkedinIn size={17} /></a>
+          <a href="https://www.linkedin.com/in/balloonlab-ae-95bb74420/" rel="me external" aria-label="Balloon Lab on LinkedIn"><FaLinkedinIn size={17} /></a>
         </nav>
       </motion.div>
     </motion.footer>

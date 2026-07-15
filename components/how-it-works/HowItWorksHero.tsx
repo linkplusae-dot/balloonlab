@@ -21,7 +21,7 @@ export function HowItWorksHero() {
       <div className={styles.heroAuraBlue} aria-hidden="true" />
       <div className={styles.heroCopy}>
         <motion.p {...reveal(.12)} className={styles.eyebrow}><Sparkles size={15} /> Simple, personal, considered</motion.p>
-        <motion.h1 {...reveal(.2)} id="process-title">From your photo to a moment that <span>floats.</span></motion.h1>
+        <motion.h1 {...reveal(.2)} id="process-title">Your personalized photo balloon, <span>step by step.</span></motion.h1>
         <motion.p {...reveal(.3)} className={styles.heroLead}>You share the memory. We guide the details, prepare the design and craft the balloon around your occasion.</motion.p>
         <motion.div {...reveal(.4)} className={styles.heroActions}>
           <a href="#six-step-process" className={styles.primaryButton}>See the six steps <ArrowDown size={18} /></a>
@@ -41,7 +41,7 @@ export function HowItWorksHero() {
       >
         <div className={styles.stageOrbit} aria-hidden="true" />
         <motion.div className={`${styles.stageCard} ${styles.stageCardPhoto}`} animate={reduceMotion ? undefined : { y: [0,-8,0], rotateZ: [-6,-3,-6] }} transition={{ duration: 5.2, repeat: Infinity, ease: "easeInOut" }}>
-          <div><Image src="/occasion-love.png" alt="A meaningful photo selected for a personalized balloon" fill priority sizes="220px" /></div>
+          <div><Image src="/occasion-love.png" alt="A meaningful photo selected for a personalized balloon" fill loading="eager" sizes="220px" /></div>
           <span><Camera size={14} /> 01 · Your memory</span>
         </motion.div>
         <motion.div className={styles.stageLens} animate={reduceMotion ? undefined : { rotateY: [0,10,0,-10,0], y: [0,-6,0] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}>
@@ -50,7 +50,7 @@ export function HowItWorksHero() {
           <small>Balloon Lab</small>
         </motion.div>
         <motion.div className={`${styles.stageCard} ${styles.stageCardReveal}`} animate={reduceMotion ? undefined : { y: [0,9,0], rotateZ: [5,3,5] }} transition={{ duration: 5.7, repeat: Infinity, ease: "easeInOut" }}>
-          <div><Image src="/balloon-gallery.png" alt="Finished personalized photo balloons ready for a celebration" fill priority sizes="300px" /></div>
+          <div><Image src="/balloon-gallery.png" alt="Finished personalized photo balloons ready for a celebration" fill preload sizes="300px" /></div>
           <span><Sparkles size={14} /> 06 · The reveal</span>
         </motion.div>
         <div className={styles.stageTrail} aria-hidden="true"><b /><b /><b /></div>

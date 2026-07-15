@@ -1,18 +1,31 @@
+import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { ScrollReveal } from "./components/ScrollReveal";
 import { ScrollLogoJourney } from "./components/ScrollLogoJourney";
-import { OccasionCylinderCarousel, type Occasion } from "@/components/designs/OccasionCylinderCarousel";
+import { OccasionCylinderCarousel } from "@/components/designs/OccasionCylinderCarousel";
+import { occasionCategories } from "@/lib/content/designs";
+import { absoluteUrl, createPageMetadata } from "@/lib/seo/site";
 import { FaWhatsapp } from "react-icons/fa6";
 
-const OCCASIONS: Occasion[] = [
-  { title:"Birthdays", number:"01", image:"/occasion-birthdays.png", position:"center 42%", href:"#contact" },
-  { title:"Love & Romance", number:"02", image:"/occasion-love.png", position:"center 43%", href:"#contact" },
-  { title:"Kids & Newborns", number:"03", image:"/occasion-kids.png", position:"center 42%", href:"#contact" },
-  { title:"Events", number:"04", image:"/occasion-events.png", position:"center 42%", href:"#contact" },
-  { title:"Corporate Gifting", number:"05", image:"/occasion-corporate.png", position:"center 40%", href:"#contact" },
-  { title:"Just Because", number:"06", image:"/occasion-surprise.png", position:"center 42%", href:"#contact" },
+export const metadata: Metadata = {
+  ...createPageMetadata({
+    title: "Personalized Photo Balloons UAE",
+    description: "Create custom photo balloons for birthdays, love, newborns, events, corporate gifts and surprises with Balloon Lab in Abu Dhabi, UAE.",
+    path: "/",
+    keywords: ["personalized photo balloons UAE", "custom photo balloons Abu Dhabi", "photo balloon gifts", "personalized balloons UAE", "Balloon Lab UAE"],
+  }),
+  title: { absolute: "Personalized Photo Balloons UAE | Balloon Lab" },
+};
+
+const FAQS = [
+  ["How do I send my photo?", "Start your order on WhatsApp and send the clearest original photo available. We review it before the design moves into production."],
+  ["How long does a personalized balloon order take?", "Preparation time depends on the selected design, image review, quantity and delivery location. We confirm the timeline before your order proceeds."],
+  ["Where does Balloon Lab deliver?", "Balloon Lab serves customers in the UAE. Delivery or collection availability for your location is confirmed during the order conversation."],
+  ["Can I customize the colours, name and message?", "Yes. Your selected design can be personalized with a photo, name or short message, colour direction, ribbon and finishing details."],
 ];
 
 function GlassNote({ className, icon, title, text }: { className: string; icon: string; title: string; text: string }) {
@@ -22,6 +35,30 @@ function GlassNote({ className, icon, title, text }: { className: string; icon: 
 export default function Home() {
   return (
     <>
+      <JsonLd
+        data={[
+          {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": `${absoluteUrl("/")}#webpage`,
+            url: absoluteUrl("/"),
+            name: "Personalized Photo Balloons UAE | Balloon Lab",
+            description: "Custom photo balloons for birthdays, love, newborns, events, corporate gifts and surprises in the UAE.",
+            isPartOf: { "@id": `${absoluteUrl("/")}#website` },
+            about: { "@id": `${absoluteUrl("/")}#organization` },
+            inLanguage: "en-AE",
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: FAQS.map(([name, text]) => ({
+              "@type": "Question",
+              name,
+              acceptedAnswer: { "@type": "Answer", text },
+            })),
+          },
+        ]}
+      />
       <Header />
       <ScrollLogoJourney />
       <main id="home" className="reference-main">
@@ -29,7 +66,7 @@ export default function Home() {
           <div className="hero-aura aura-one"/><div className="hero-aura aura-two"/>
           <div className="hero-copy">
             <span className="made-in">Made in the UAE <b>🇦🇪</b></span>
-            <h1>Printed Memories,<br/><em>Beautifully Floating</em></h1>
+            <h1>Personalized Photo Balloons,<br/><em>Beautifully Floating</em></h1>
             <p>Custom photo balloons for birthdays, love moments,<br className="desktop-break"/> kids, events, and unforgettable surprises.</p>
             <div className="hero-actions">
               <a id="create" href="#contact" className="primary-hero-button">Start Your Balloon <span>→</span></a>
@@ -40,7 +77,7 @@ export default function Home() {
 
           <div className="hero-stage" aria-label="Balloon Lab camera balloon display">
             <div className="orbit orbit-one"/><div className="orbit orbit-two"/>
-            <div className="main-balloon-wrap"><Image src="/logo.png" alt="Blue Balloon Lab camera balloon" width={1000} height={1000} priority /></div>
+            <div className="main-balloon-wrap"><Image src="/logo.png" alt="Balloon Lab blue balloon and camera-lens logo" width={1000} height={1000} preload sizes="(max-width: 900px) 72vw, 48vw" /></div>
             <div className="photo-balloon photo-balloon-left"><div className="city-photo">🇦🇪</div><i/></div>
             <div className="photo-balloon photo-balloon-right"><div className="family-photo">♥</div><i/></div>
             <div className="stage-platform"><div/><span>Memories Made</span></div>
@@ -50,7 +87,7 @@ export default function Home() {
           </div>
         </section>
         <section id="how-it-works" className="home-section how-section">
-          <ScrollReveal className="section-heading"><span>Simple magic</span><h2>From your camera roll<br/>to a floating memory.</h2><p>Three easy steps. One unforgettable surprise.</p></ScrollReveal>
+          <ScrollReveal className="section-heading"><span>Simple magic</span><h2>From your camera roll<br/>to a floating memory.</h2><p>Three easy steps. One unforgettable surprise.</p><Link href="/how-it-works">See the complete ordering process →</Link></ScrollReveal>
           <div className="steps-grid">
             {[['01','Upload your photo','Choose the memory you want to make float.'],['02','Make it yours','Pick colors, ribbons, message and finishing details.'],['03','We create & deliver','Handcrafted with care and delivered across the UAE.']].map((step, i) => <ScrollReveal key={step[0]} effect={i===0?'left':i===2?'right':'rise'} className="step-card"><b>{step[0]}</b><div className="step-orb"><span>{i===0?'↥':i===1?'✦':'✓'}</span></div><h3>{step[1]}</h3><p>{step[2]}</p></ScrollReveal>)}
           </div>
@@ -58,11 +95,11 @@ export default function Home() {
 
         <section id="occasions" className="home-section occasions-section">
           <ScrollReveal className="section-heading"><span>Made for every moment</span><h2>There’s always a reason<br/>to make it personal.</h2></ScrollReveal>
-          <ScrollReveal effect="scale"><OccasionCylinderCarousel occasions={OCCASIONS}/></ScrollReveal>
+          <ScrollReveal effect="scale"><OccasionCylinderCarousel occasions={occasionCategories}/></ScrollReveal>
         </section>
 
         <section id="gallery" className="home-section gallery-section">
-          <div className="gallery-copy"><ScrollReveal effect="left"><span className="section-label">Real moments, made tangible</span><h2>Photos belong<br/>on more than screens.</h2><p>Every Balloon Lab creation begins with a memory and ends with a reaction worth remembering.</p><a href="#contact" className="primary-hero-button">Create Your Own <span>→</span></a></ScrollReveal></div>
+          <div className="gallery-copy"><ScrollReveal effect="left"><span className="section-label">Photo balloon inspiration</span><h2>Photos belong<br/>on more than screens.</h2><p>Explore personalized photo balloon ideas for birthdays, couples, children, events and corporate gifting in the UAE.</p><Link href="/gallery" className="primary-hero-button">View Photo Gallery <span>→</span></Link></ScrollReveal></div>
           <ScrollReveal effect="right" className="gallery-visual"><Image src="/balloon-gallery.png" alt="Personalized photo balloons for love, family and children" width={1536} height={1024}/><div className="gallery-float-card"><b>100%</b><span>Personalized for you</span></div></ScrollReveal>
         </section>
 
@@ -83,7 +120,7 @@ export default function Home() {
 
         <section className="home-section faq-section">
           <ScrollReveal effect="left" className="faq-intro"><span className="section-label">Questions, answered</span><h2>Everything you need<br/>to know.</h2><p>Still curious? Message us on WhatsApp and we’ll help you create the perfect balloon.</p></ScrollReveal>
-          <ScrollReveal effect="right" className="faq-list">{[['How do I send my photo?','After starting your order, you can upload your preferred high-quality photo directly through WhatsApp.'],['How long does an order take?','Most orders are prepared within 1–2 days. Same-day options depend on availability and location.'],['Do you deliver across the UAE?','Yes. We deliver across Dubai, Abu Dhabi, Sharjah and other UAE locations.'],['Can I customize colors and text?','Absolutely. Choose your palette, message, ribbons and finishing details.']].map((q,i)=><details key={q[0]} open={i===0}><summary>{q[0]}<span>+</span></summary><p>{q[1]}</p></details>)}</ScrollReveal>
+          <ScrollReveal effect="right" className="faq-list">{FAQS.map((q,i)=><details key={q[0]} open={i===0}><summary>{q[0]}<span>+</span></summary><p>{q[1]}</p></details>)}</ScrollReveal>
         </section>
 
         <section id="contact" className="whatsapp-section"><ScrollReveal effect="scale"><span>Ready to make a memory float?</span><h2>Send us your photo.<br/>We’ll handle the magic.</h2><p>Start your personalized balloon order on WhatsApp today.</p><a href="https://wa.me/971561315511" className="whatsapp-button"><FaWhatsapp aria-hidden="true" /> Start on WhatsApp <b>→</b></a></ScrollReveal><div className="cta-bubble cta-bubble-one"/><div className="cta-bubble cta-bubble-two"/></section>

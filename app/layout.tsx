@@ -1,70 +1,110 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { absoluteUrl, siteConfig } from "@/lib/seo/site";
+import "@fontsource/poppins/latin-400.css";
+import "@fontsource/poppins/latin-500.css";
+import "@fontsource/poppins/latin-600.css";
+import "@fontsource/poppins/latin-700.css";
+import "@fontsource/poppins/latin-800.css";
 import "./globals.css";
 
-const poppins = Poppins({
-  variable: "--font-poppins",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-});
-
 export const metadata: Metadata = {
-  metadataBase: new URL("https://balloonlab.ae"),
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Balloon Lab | Memories Made",
+    default: "Personalized Photo Balloons UAE | Balloon Lab",
     template: "%s | Balloon Lab",
   },
-  description: "Personalized photo balloons crafted for unforgettable moments across the UAE.",
-  applicationName: "Balloon Lab",
-  keywords: ["personalized photo balloons", "photo balloons UAE", "custom balloons Abu Dhabi", "Balloon Lab"],
-  alternates: { canonical: "/" },
+  description: "Create personalized photo balloons for birthdays, love, newborns, events and corporate gifts, crafted by Balloon Lab in Abu Dhabi for moments across the UAE.",
+  applicationName: siteConfig.name,
+  authors: [{ name: siteConfig.name, url: siteConfig.url }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
+  category: "Personalized gifts",
+  manifest: "/manifest.webmanifest",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "48x48", type: "image/x-icon" },
+      { url: "/favicon.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+  },
   openGraph: {
     type: "website",
-    locale: "en_AE",
-    url: "/",
-    siteName: "Balloon Lab",
-    title: "Balloon Lab | Memories Made",
-    description: "Personalized photo balloons crafted for unforgettable moments across the UAE.",
+    locale: siteConfig.locale,
+    siteName: siteConfig.name,
+    title: "Personalized Photo Balloons UAE | Balloon Lab",
+    description: "Turn a favourite photo into a personalized balloon for birthdays, love, newborns, events and gifts across the UAE.",
   },
   twitter: {
-    card: "summary",
-    title: "Balloon Lab | Memories Made",
-    description: "Personalized photo balloons crafted for unforgettable moments across the UAE.",
+    card: "summary_large_image",
+    title: "Personalized Photo Balloons UAE | Balloon Lab",
+    description: "Turn a favourite photo into a personalized balloon for meaningful moments across the UAE.",
   },
-  robots: { index: true, follow: true },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${poppins.variable} scroll-smooth`}>
+    <html lang={siteConfig.language} className="scroll-smooth">
       <body>
         {children}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "Balloon Lab",
-              url: "https://balloonlab.ae",
-              logo: "https://balloonlab.ae/favicon.png",
-              slogan: "Memories Made",
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "Abu Dhabi",
-                addressCountry: "AE",
+        <JsonLd
+          data={{
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": ["Organization", "LocalBusiness"],
+                "@id": `${siteConfig.url}/#organization`,
+                name: siteConfig.name,
+                url: siteConfig.url,
+                logo: {
+                  "@type": "ImageObject",
+                  url: absoluteUrl("/favicon.png"),
+                  width: 512,
+                  height: 512,
+                },
+                slogan: siteConfig.tagline,
+                description: "A UAE personalized gifting brand creating custom photo balloons for birthdays, love, newborns, events, corporate gifting and surprises.",
+                telephone: siteConfig.phoneE164,
+                address: {
+                  "@type": "PostalAddress",
+                  streetAddress: "Office 26, Floor 20, Al Wahda Commercial Tower",
+                  postOfficeBoxNumber: "25025",
+                  addressLocality: "Abu Dhabi",
+                  addressRegion: "Abu Dhabi",
+                  addressCountry: "AE",
+                },
+                areaServed: { "@type": "Country", name: "United Arab Emirates" },
+                contactPoint: {
+                  "@type": "ContactPoint",
+                  telephone: siteConfig.phoneE164,
+                  contactType: "customer service",
+                  areaServed: "AE",
+                  availableLanguage: ["English"],
+                },
+                sameAs: Object.values(siteConfig.social),
               },
-              contactPoint: {
-                "@type": "ContactPoint",
-                telephone: "+971-56-131-5511",
-                contactType: "customer service",
+              {
+                "@type": "WebSite",
+                "@id": `${siteConfig.url}/#website`,
+                url: siteConfig.url,
+                name: siteConfig.name,
+                alternateName: "Balloon Lab UAE",
+                description: "Personalized photo balloons and custom balloon gifts in the UAE.",
+                inLanguage: siteConfig.language,
+                publisher: { "@id": `${siteConfig.url}/#organization` },
               },
-              sameAs: [
-                "https://instagram.com/balloonlabae",
-                "https://www.tiktok.com/@balloonlabae",
-                "https://www.linkedin.com/in/balloonlab-ae-95bb74420/",
-              ],
-            }),
+            ],
           }}
         />
       </body>
