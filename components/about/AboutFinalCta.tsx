@@ -17,7 +17,7 @@ export function AboutFinalCta() {
         <p>Bring us the photo. We’ll help turn it into a surprise made especially for them.</p>
         <div className={styles.finalActions}>
           <Link href="/designs" className={styles.primaryButton}>Start your balloon <ArrowRight size={18} /></Link>
-          <a href="https://wa.me/971565344544" className={styles.secondaryButton}><FaWhatsapp size={18} aria-hidden="true" /> Chat on WhatsApp</a>
+          <a href="https://wa.me/971561315511" className={styles.secondaryButton}><FaWhatsapp size={18} aria-hidden="true" /> Chat on WhatsApp</a>
         </div>
       </RevealOnScroll>
     </section>

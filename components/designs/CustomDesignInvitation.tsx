@@ -39,7 +39,7 @@ export function CustomDesignInvitation() {
               </div>
             ))}
           </div>
-          <Link href="https://wa.me/971565344544" className={styles.primaryButton}>
+          <Link href="https://wa.me/971561315511" className={styles.primaryButton}>
             Start a Custom Design <ArrowRight size={18} aria-hidden="true" />
           </Link>
         </RevealOnScroll>

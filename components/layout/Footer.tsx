@@ -16,8 +16,8 @@ const quickLinks = [
   { label: "Home", href: "/" },
   { label: "Designs", href: "/designs" },
   { label: "About", href: "/about" },
-  { label: "How It Works", href: "/#how-it-works" },
-  { label: "Gallery", href: "/#gallery" },
+  { label: "How It Works", href: "/how-it-works" },
+  { label: "Gallery", href: "/gallery" },
   { label: "Contact", href: "/#contact" },
 ];
 
@@ -102,9 +102,9 @@ export function Footer() {
           <p className="footer-card-label">Say hello</p>
           <h3>Let’s create some joy.</h3>
           <div className="footer-contact-list">
-            <a href="tel:+971565344544"><Phone size={16} /><span><small>Call / WhatsApp</small>+971 56 534 4544</span></a>
+            <a href="tel:+971561315511"><Phone size={16} /><span><small>Call / WhatsApp</small>+971 56 131 5511</span></a>
             <a href="https://instagram.com/balloonlabae"><AtSign size={16} /><span><small>Instagram</small>@balloonlabae</span></a>
-            <p><MapPin size={16} /><span><small>Find us</small>Al Wahda Commercial Tower, Abu Dhabi, UAE</span></p>
+            <p><MapPin size={16} /><span><small>Find us</small>Office 26, Floor 20, Al Wahda Commercial Tower, P.O 25025 Abu Dhabi, UAE</span></p>
           </div>
           <Link href="/designs#catalogue" className="footer-primary-cta">Start Your Balloon <ArrowUpRight size={18} /></Link>
         </motion.section>
@@ -115,7 +115,7 @@ export function Footer() {
         <nav aria-label="Social links">
           <a href="https://instagram.com/balloonlabae" aria-label="Instagram"><FaInstagram size={18} /></a>
           <a href="https://www.tiktok.com/@balloonlabae" aria-label="TikTok"><FaTiktok size={17} /></a>
-          <a href="https://wa.me/971565344544" aria-label="WhatsApp"><FaWhatsapp size={19} /></a>
+          <a href="https://wa.me/971561315511" aria-label="WhatsApp"><FaWhatsapp size={19} /></a>
           <a href="https://www.linkedin.com/in/balloonlab-ae-95bb74420/" aria-label="LinkedIn"><FaLinkedinIn size={17} /></a>
         </nav>
       </motion.div>

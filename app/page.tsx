@@ -86,7 +86,7 @@ export default function Home() {
           <ScrollReveal effect="right" className="faq-list">{[['How do I send my photo?','After starting your order, you can upload your preferred high-quality photo directly through WhatsApp.'],['How long does an order take?','Most orders are prepared within 1–2 days. Same-day options depend on availability and location.'],['Do you deliver across the UAE?','Yes. We deliver across Dubai, Abu Dhabi, Sharjah and other UAE locations.'],['Can I customize colors and text?','Absolutely. Choose your palette, message, ribbons and finishing details.']].map((q,i)=><details key={q[0]} open={i===0}><summary>{q[0]}<span>+</span></summary><p>{q[1]}</p></details>)}</ScrollReveal>
         </section>
 
-        <section id="contact" className="whatsapp-section"><ScrollReveal effect="scale"><span>Ready to make a memory float?</span><h2>Send us your photo.<br/>We’ll handle the magic.</h2><p>Start your personalized balloon order on WhatsApp today.</p><a href="https://wa.me/971565344544" className="whatsapp-button"><FaWhatsapp aria-hidden="true" /> Start on WhatsApp <b>→</b></a></ScrollReveal><div className="cta-bubble cta-bubble-one"/><div className="cta-bubble cta-bubble-two"/></section>
+        <section id="contact" className="whatsapp-section"><ScrollReveal effect="scale"><span>Ready to make a memory float?</span><h2>Send us your photo.<br/>We’ll handle the magic.</h2><p>Start your personalized balloon order on WhatsApp today.</p><a href="https://wa.me/971561315511" className="whatsapp-button"><FaWhatsapp aria-hidden="true" /> Start on WhatsApp <b>→</b></a></ScrollReveal><div className="cta-bubble cta-bubble-one"/><div className="cta-bubble cta-bubble-two"/></section>
       </main>
       <Footer />
     </>

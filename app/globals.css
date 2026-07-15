@@ -2995,7 +2995,7 @@ button {
     height:76px;
     padding:7px 9px 8px;
     display:grid;
-    grid-template-columns:repeat(5,minmax(0,1fr));
+    grid-template-columns:repeat(6,minmax(0,1fr));
     align-items:end;
     border:1px solid rgba(255,255,255,.94);
     border-radius:26px;
@@ -3006,7 +3006,7 @@ button {
   .reference-bottom-nav:before{content:"";position:absolute;inset:5px;border:1px solid rgba(255,255,255,.58);border-radius:20px;pointer-events:none}
   .reference-bottom-nav a{position:relative;z-index:2;min-width:0;height:58px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;border-radius:18px;color:#76819c;touch-action:manipulation;transition:color .22s,background .22s,transform .15s}
   .reference-bottom-nav a>span{width:31px;height:27px;display:grid;place-items:center;border-radius:11px;transition:background .22s,box-shadow .22s,transform .22s}
-  .reference-bottom-nav small{font-size:8px;font-weight:700;letter-spacing:.01em}
+  .reference-bottom-nav small{font-size:7px;font-weight:700;letter-spacing:.005em}
   .reference-bottom-nav a.is-active{color:#5d27e8;background:linear-gradient(145deg,rgba(123,44,255,.1),rgba(0,184,255,.06))}
   .reference-bottom-nav a.is-active>span{color:white;background:linear-gradient(145deg,#7b2cff,#005bff);box-shadow:0 7px 14px rgba(73,42,207,.24)}
   .reference-bottom-nav a:active{transform:scale(.92)}

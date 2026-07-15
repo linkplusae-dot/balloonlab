@@ -5,14 +5,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { ContactRound, Home, Menu, Palette, Sparkles, UsersRound, X } from "lucide-react";
+import { ContactRound, Home, Images, Menu, Palette, Sparkles, UsersRound, X } from "lucide-react";
 
 const navigationItems = [
   { label: "Home", href: "/" },
   { label: "Designs", href: "/designs" },
   { label: "About", href: "/about" },
-  { label: "How It Works", href: "/#how-it-works" },
-  { label: "Gallery", href: "/#gallery" },
+  { label: "How It Works", href: "/how-it-works" },
+  { label: "Gallery", href: "/gallery" },
   { label: "Contact", href: "/#contact" },
 ];
 
@@ -20,6 +20,7 @@ const mobileTabs = [
   { label: "Home", href: "/", icon: Home },
   { label: "Designs", href: "/designs", icon: Palette },
   { label: "Create", href: "/designs#catalogue", icon: Sparkles, primary: true },
+  { label: "Gallery", href: "/gallery", icon: Images },
   { label: "About", href: "/about", icon: UsersRound },
   { label: "Contact", href: "/#contact", icon: ContactRound },
 ];
@@ -58,6 +59,10 @@ export function Header() {
     href === "/" ? pathname === "/" : !href.includes("#") && pathname.startsWith(href);
   const currentLabel = pathname.startsWith("/about")
     ? "Our story"
+    : pathname.startsWith("/how-it-works")
+      ? "Our process"
+    : pathname.startsWith("/gallery")
+      ? "Our gallery"
     : pathname.startsWith("/designs")
       ? "Design studio"
       : "Memories Made";

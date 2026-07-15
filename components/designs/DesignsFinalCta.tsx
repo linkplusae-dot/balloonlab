@@ -16,7 +16,7 @@ export function DesignsFinalCta() {
         <p>Let Balloon Lab prepare something made for your moment, your photo and the feeling you want to share.</p>
         <div>
           <Link href="#catalogue" className={styles.primaryButton}>Create Yours <ArrowRight size={18} aria-hidden="true" /></Link>
-          <Link href="https://wa.me/971565344544" className={styles.whatsappButton}><FaWhatsapp size={18} aria-hidden="true" /> Order on WhatsApp</Link>
+          <Link href="https://wa.me/971561315511" className={styles.whatsappButton}><FaWhatsapp size={18} aria-hidden="true" /> Order on WhatsApp</Link>
         </div>
       </RevealOnScroll>
     </section>
