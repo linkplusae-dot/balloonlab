@@ -10,9 +10,9 @@ import { AboutFinalCta } from "@/components/about/AboutFinalCta";
 import styles from "./about.module.css";
 
 export const metadata: Metadata = {
-  title: "About Balloon Lab | Personalized Gifting in the UAE",
+  title: "About Balloon Lab",
   description:
-    "Meet the people and purpose behind Balloon Lab, a UAE personalized gifting brand turning meaningful photos into floating memories.",
+    "Meet the people and purpose behind Balloon Lab, a UAE personalized gifting brand creating meaningful photo balloons for unforgettable moments.",
 };
 
 export default function AboutPage() {

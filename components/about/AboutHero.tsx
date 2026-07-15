@@ -69,7 +69,7 @@ export function AboutHero() {
           <Sparkles size={18} />
           <span><b>Crafted in the UAE</b><small>For moments that matter</small></span>
         </div>
-        <div className={styles.heroPedestal}><span>Floating memories</span></div>
+        <div className={styles.heroPedestal}><span>Memories Made</span></div>
       </motion.div>
     </section>
   );

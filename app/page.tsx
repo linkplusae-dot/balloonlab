@@ -4,6 +4,7 @@ import { Header } from "@/components/layout/Header";
 import { ScrollReveal } from "./components/ScrollReveal";
 import { ScrollLogoJourney } from "./components/ScrollLogoJourney";
 import { OccasionCylinderCarousel, type Occasion } from "@/components/designs/OccasionCylinderCarousel";
+import { FaWhatsapp } from "react-icons/fa6";
 
 const OCCASIONS: Occasion[] = [
   { title:"Birthdays", number:"01", image:"/occasion-birthdays.png", position:"center 42%", href:"#contact" },
@@ -42,7 +43,7 @@ export default function Home() {
             <div className="main-balloon-wrap"><Image src="/logo.png" alt="Blue Balloon Lab camera balloon" width={1000} height={1000} priority /></div>
             <div className="photo-balloon photo-balloon-left"><div className="city-photo">🇦🇪</div><i/></div>
             <div className="photo-balloon photo-balloon-right"><div className="family-photo">♥</div><i/></div>
-            <div className="stage-platform"><div/><span>Made to float. Made to memorize.</span></div>
+            <div className="stage-platform"><div/><span>Memories Made</span></div>
             <GlassNote className="personal-note" icon="♙" title="Personalized" text="Made uniquely for you"/>
             <GlassNote className="print-note" icon="◇" title="Premium Print" text="Vibrant. Durable. Unforgettable."/>
             <span className="bubble bubble-one"/><span className="bubble bubble-two"/><span className="bubble bubble-three"/>
@@ -85,7 +86,7 @@ export default function Home() {
           <ScrollReveal effect="right" className="faq-list">{[['How do I send my photo?','After starting your order, you can upload your preferred high-quality photo directly through WhatsApp.'],['How long does an order take?','Most orders are prepared within 1–2 days. Same-day options depend on availability and location.'],['Do you deliver across the UAE?','Yes. We deliver across Dubai, Abu Dhabi, Sharjah and other UAE locations.'],['Can I customize colors and text?','Absolutely. Choose your palette, message, ribbons and finishing details.']].map((q,i)=><details key={q[0]} open={i===0}><summary>{q[0]}<span>+</span></summary><p>{q[1]}</p></details>)}</ScrollReveal>
         </section>
 
-        <section id="contact" className="whatsapp-section"><ScrollReveal effect="scale"><span>Ready to make a memory float?</span><h2>Send us your photo.<br/>We’ll handle the magic.</h2><p>Start your personalized balloon order on WhatsApp today.</p><a href="https://wa.me/971000000000" className="whatsapp-button">◉ &nbsp; Start on WhatsApp <b>→</b></a></ScrollReveal><div className="cta-bubble cta-bubble-one"/><div className="cta-bubble cta-bubble-two"/></section>
+        <section id="contact" className="whatsapp-section"><ScrollReveal effect="scale"><span>Ready to make a memory float?</span><h2>Send us your photo.<br/>We’ll handle the magic.</h2><p>Start your personalized balloon order on WhatsApp today.</p><a href="https://wa.me/971565344544" className="whatsapp-button"><FaWhatsapp aria-hidden="true" /> Start on WhatsApp <b>→</b></a></ScrollReveal><div className="cta-bubble cta-bubble-one"/><div className="cta-bubble cta-bubble-two"/></section>
       </main>
       <Footer />
     </>

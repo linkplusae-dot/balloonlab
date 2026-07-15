@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa6";
 import { RevealOnScroll } from "@/components/motion/RevealOnScroll";
 import styles from "@/app/about/about.module.css";
 
@@ -16,7 +17,7 @@ export function AboutFinalCta() {
         <p>Bring us the photo. We’ll help turn it into a surprise made especially for them.</p>
         <div className={styles.finalActions}>
           <Link href="/designs" className={styles.primaryButton}>Start your balloon <ArrowRight size={18} /></Link>
-          <a href="https://wa.me/971000000000" className={styles.secondaryButton}><MessageCircle size={18} /> Chat on WhatsApp</a>
+          <a href="https://wa.me/971565344544" className={styles.secondaryButton}><FaWhatsapp size={18} aria-hidden="true" /> Chat on WhatsApp</a>
         </div>
       </RevealOnScroll>
     </section>

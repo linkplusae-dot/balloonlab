@@ -60,7 +60,7 @@ export function Header() {
     ? "Our story"
     : pathname.startsWith("/designs")
       ? "Design studio"
-      : "Floating memories";
+      : "Memories Made";
 
   const entrance = reduceMotion
     ? { initial: false as const, animate: { opacity: 1, x: "-50%", y: 0 } }
@@ -169,7 +169,7 @@ export function Header() {
                 <Image src="/logo-transparent.png" alt="" width={108} height={135} />
               </span>
               <div>
-                <small>Floating memories</small>
+                <small>Memories Made</small>
                 <b>Where to next?</b>
               </div>
             </div>

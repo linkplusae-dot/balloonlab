@@ -5,14 +5,11 @@ import Link from "next/link";
 import {
   ArrowUpRight,
   AtSign,
-  BriefcaseBusiness,
-  Camera,
   MapPin,
-  MessageCircleMore,
-  Music2,
   Phone,
   Sparkles,
 } from "lucide-react";
+import { FaInstagram, FaLinkedinIn, FaTiktok, FaWhatsapp } from "react-icons/fa6";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 
 const quickLinks = [
@@ -61,7 +58,7 @@ export function Footer() {
         <div className="footer-stage-copy">
           <p><Sparkles size={15} aria-hidden="true" /> Balloon Lab · UAE</p>
           <h2 id="footer-heading">Memories were never meant to stay still.</h2>
-          <span>We make them float.</span>
+          <span>We make them exciting and more memorable.</span>
         </div>
         <motion.div
           className="footer-logo-sculpture"
@@ -86,7 +83,7 @@ export function Footer() {
             <strong>Balloon <em>Lab</em></strong>
           </Link>
           <p>Personalized photo balloons crafted for birthdays, events, surprises, and unforgettable moments across the UAE.</p>
-          <b>Floating Memories</b>
+          <b>Memories Made</b>
         </motion.section>
 
         <motion.section className="footer-3d-card" variants={reduceMotion ? undefined : cardVariants} custom={1}>
@@ -105,7 +102,7 @@ export function Footer() {
           <p className="footer-card-label">Say hello</p>
           <h3>Let’s create some joy.</h3>
           <div className="footer-contact-list">
-            <a href="tel:+971561315511"><Phone size={16} /><span><small>Call</small>+971 56 131 5511</span></a>
+            <a href="tel:+971565344544"><Phone size={16} /><span><small>Call / WhatsApp</small>+971 56 534 4544</span></a>
             <a href="https://instagram.com/balloonlabae"><AtSign size={16} /><span><small>Instagram</small>@balloonlabae</span></a>
             <p><MapPin size={16} /><span><small>Find us</small>Al Wahda Commercial Tower, Abu Dhabi, UAE</span></p>
           </div>
@@ -116,10 +113,10 @@ export function Footer() {
       <motion.div className="footer-3d-bottom" variants={reduceMotion ? undefined : cardVariants} custom={0}>
         <div><p>© 2026 Balloon Lab. All rights reserved.</p><small>Personalized photo balloons in UAE</small></div>
         <nav aria-label="Social links">
-          <a href="https://instagram.com/balloonlabae" aria-label="Instagram"><Camera size={17} /></a>
-          <a href="#" aria-label="TikTok"><Music2 size={17} /></a>
-          <a href="https://wa.me/971561315511" aria-label="WhatsApp"><MessageCircleMore size={17} /></a>
-          <a href="#" aria-label="LinkedIn"><BriefcaseBusiness size={17} /></a>
+          <a href="https://instagram.com/balloonlabae" aria-label="Instagram"><FaInstagram size={18} /></a>
+          <a href="https://www.tiktok.com/@balloonlabae" aria-label="TikTok"><FaTiktok size={17} /></a>
+          <a href="https://wa.me/971565344544" aria-label="WhatsApp"><FaWhatsapp size={19} /></a>
+          <a href="https://www.linkedin.com/in/balloonlab-ae-95bb74420/" aria-label="LinkedIn"><FaLinkedinIn size={17} /></a>
         </nav>
       </motion.div>
     </motion.footer>

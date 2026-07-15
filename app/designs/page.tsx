@@ -12,7 +12,7 @@ import { DesignsFinalCta } from "@/components/designs/DesignsFinalCta";
 import styles from "./designs.module.css";
 
 export const metadata: Metadata = {
-  title: "Personalized Balloon Designs UAE | Balloon Lab",
+  title: "Personalized Balloon Designs UAE",
   description: "Explore customizable photo balloon designs for birthdays, love, newborns, events, corporate gifting and meaningful surprises across the UAE.",
 };
 
