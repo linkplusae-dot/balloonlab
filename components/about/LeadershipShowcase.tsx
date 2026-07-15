@@ -9,6 +9,7 @@ import styles from "@/app/about/about.module.css";
 const leaders = [
   {
     image: "/founder1.jpeg",
+    name: "Mubarak Obaid Al Dhaheri",
     role: "Founder & CEO",
     label: "Vision & creative direction",
     description: "Guiding Balloon Lab’s vision and its promise to make personalized gifting feel truly personal.",
@@ -16,6 +17,7 @@ const leaders = [
   },
   {
     image: "/founder2.jpeg",
+    name: "Malik Muhammad",
     role: "General Manager",
     label: "Company management & operations",
     description: "Leading the day-to-day coordination that carries each custom idea from conversation to celebration.",
@@ -75,9 +77,9 @@ export function LeadershipShowcase() {
         <div className={styles.leadershipStage}>
           <div className={styles.leadershipGlow} aria-hidden="true" />
           <div className={styles.leadershipSpine} aria-hidden="true"><i /><span>01</span><span>02</span></div>
-          {leaders.map(({ image, role, label, description, icon: Icon }, index) => (
+          {leaders.map(({ image, name, role, label, description, icon: Icon }, index) => (
             <motion.article
-              key={role}
+              key={name}
               className={`${styles.leaderCard} ${index === 0 ? styles.leaderCardFirst : styles.leaderCardSecond}`}
               style={reduceMotion ? undefined : isMobile ? mobileCardMotion[index] : cardMotion[index]}
               initial={reduceMotion ? false : { opacity: 0, rotateX: 18, z: -120 }}
@@ -98,7 +100,14 @@ export function LeadershipShowcase() {
               </div>
               <div className={styles.leaderInfo}>
                 <small>{label}</small>
-                <h3>{role}</h3>
+                <h3 className={styles.leaderName} style={{
+                  background: `linear-gradient(135deg, ${index === 0 ? '#6e8efb' : '#a779e9'} 0%, ${index === 0 ? '#6e8efb' : '#a779e9'} 100%)`,
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  width: 'fit-content',
+                }}>
+                  {name}
+                </h3>
                 <p>{description}</p>
               </div>
             </motion.article>

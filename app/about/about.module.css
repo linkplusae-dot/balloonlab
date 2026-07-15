@@ -98,7 +98,8 @@
 .leaderRolePill { right: 17px; bottom: 17px; padding: 11px 14px; display: flex; align-items: center; gap: 7px; border-radius: 999px; font-size: 11px; font-weight: 700; }
 .leaderInfo { padding: 27px 25px 23px; transform: translateZ(18px); }
 .leaderInfo small { color: #8d75da; font-size: 10px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
-.leaderInfo h3 { margin: 7px 0 10px; font-size: clamp(25px,2.3vw,34px); letter-spacing: -.04em; }
+.leaderInfo .leaderName { margin: 8px 0 5px; color: #06143d; font-size: clamp(25px,2.3vw,34px); font-weight: 650; line-height: 1.08; letter-spacing: -.04em; }
+.leaderInfo .leaderTitle { display:block; margin:0 0 12px; color:#6f36db; font-size:12px; font-weight:750; line-height:1.35; letter-spacing:.035em; }
 .leaderInfo p { margin: 0; color: #66728e; font-size: 13px; line-height: 1.72; }
 .leadershipGlow { position: absolute; z-index: 0; left: 25%; right: 25%; top: 25%; height: 45%; border-radius: 50%; background: rgba(123,44,255,.18); filter: blur(90px); }
 .leadershipSpine { position: absolute; z-index: 1; left: 50%; top: 17%; bottom: 18%; width: 1px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; color: #8a7aad; background: linear-gradient(transparent,var(--purple),var(--pink),transparent); }
@@ -203,7 +204,7 @@
   .leaderCardSecond { top: 38%; margin: 0; transform-origin: center top; translate: -46% 0; }
   .leaderImage { height: min(47vh,380px); min-height: 310px; border-radius: 25px; }
   .leaderInfo { padding: 19px 17px 17px; }
-  .leaderInfo h3 { font-size: 23px; }
+  .leaderInfo .leaderName { font-size: 23px; }
   .leaderInfo p { font-size: 11px; }
   .leaderRolePill { right: 12px; bottom: 12px; }
   .leaderNumber { top: 13px; left: 13px; width: 42px; height: 42px; }
@@ -291,7 +292,8 @@
   .leaderNumber { z-index:3; top:14px; left:14px; background:linear-gradient(145deg,rgba(247,37,133,.82),rgba(123,44,255,.84)); }
   .leaderInfo { position:absolute; z-index:4; left:23px; right:23px; bottom:24px; padding:0; color:white; transform:translateZ(34px); }
   .leaderInfo small { color:#d9d5ff; font-size:9px; letter-spacing:.12em; }
-  .leaderInfo h3 { margin:7px 0 9px; color:white; font-size:28px; }
+  .leaderInfo .leaderName { margin:7px 0 4px; color:white; font-size:28px; text-shadow:0 3px 16px rgba(6,20,61,.35); }
+  .leaderInfo .leaderTitle { margin:0 0 9px; color:#e4e0ff; font-size:11px; }
   .leaderInfo p { max-width:330px; color:rgba(255,255,255,.82); font-size:12px; line-height:1.65; }
   .leadershipGlow { left:6%; right:6%; top:14%; height:55%; opacity:.75; }
   .leadershipSpine { z-index:5; left:22%; right:22%; top:auto; bottom:3%; width:auto; height:1px; flex-direction:row; background:linear-gradient(90deg,transparent,var(--purple),var(--pink),transparent); }
@@ -311,7 +313,7 @@
   .heroTagBottom { left:-12px; bottom:53px; }
   .leadershipScroll { height:1460px; }
   .leaderCard { height:min(66svh,555px); min-height:490px; }
-  .leaderInfo h3 { font-size:25px; }
+  .leaderInfo .leaderName { font-size:25px; }
 }
 
 @media (max-width: 700px) and (orientation: landscape) {
