@@ -15,7 +15,7 @@
 
 .hero {
   position: relative;
-  min-height: 920px;
+  min-height: max(920px, 100svh);
   padding: 220px max(28px, calc((100vw - 1320px) / 2)) 110px;
   display: grid;
   grid-template-columns: minmax(0, .92fr) minmax(500px, 1.08fr);
@@ -144,6 +144,84 @@
 
 .mobileWhatsapp { display: none; }
 
+/* Editorial About hero: layered leadership portraits in the Gallery visual language. */
+.heroStory {
+  position: relative;
+  z-index: 2;
+  width: min(760px, 100%);
+  height: clamp(570px, 48vw, 700px);
+  justify-self: center;
+  perspective: 1800px;
+  transform-style: preserve-3d;
+}
+.storyHalo {
+  position: absolute;
+  inset: 8% 3% 4%;
+  border: 1px solid rgba(255,255,255,.92);
+  border-radius: 50%;
+  background: radial-gradient(circle,rgba(255,255,255,.68),rgba(255,255,255,.1) 58%,transparent 72%);
+  box-shadow: 0 0 0 25px rgba(255,255,255,.12),0 36px 90px rgba(63,59,157,.16),inset 0 0 55px rgba(255,255,255,.82);
+  transform: rotateX(68deg) translateZ(-80px);
+}
+.storyPortrait {
+  position: absolute;
+  overflow: hidden;
+  border: 9px solid rgba(255,255,255,.85);
+  background: rgba(255,255,255,.78);
+  box-shadow: 0 35px 75px rgba(43,43,128,.23),inset 0 1px white;
+  backdrop-filter: blur(12px);
+  transform-style: preserve-3d;
+}
+.storyPortrait { left: 4%; top: 10%; width: 42%; height: 68%; padding: 8px; border-radius: 38px; will-change: transform; }
+.storyImage { position: relative; height: calc(100% - 76px); display: block; overflow: hidden; border-radius: 27px; }
+.storyImage img { object-fit: cover; }
+.storyPortraitFounder img { object-position: 52% center; }
+.storyPortraitManager img { object-position: 48% 24%; }
+.storyCaption { height: 76px; padding: 12px 10px 5px; display: grid; align-content: center; gap: 3px; }
+.storyCaption small { color: var(--purple); font-size: 8px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.storyCaption b { color: var(--navy); font-size: 13px; line-height: 1.2; }
+.storySeal {
+  position: absolute;
+  z-index: 7;
+  left: 43%;
+  top: 34%;
+  width: 168px;
+  height: 168px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255,255,255,.94);
+  border-radius: 50%;
+  background: radial-gradient(circle at 34% 26%,#fff,#e6f2ff 42%,#c8d7ff);
+  box-shadow: 0 28px 65px rgba(44,52,154,.28),0 0 0 17px rgba(255,255,255,.18),inset 0 0 25px white;
+  transform: translateZ(190px);
+}
+.storySeal > span { width: 55px; height: 68px; }
+.storySeal img { width: 100%; height: 100%; object-fit: contain; }
+.storySeal small { margin-top: 3px; color: #697694; font-size: 6px; font-weight: 750; letter-spacing: .09em; text-transform: uppercase; }
+.storySeal b { margin-top: 3px; color: var(--navy); font-size: 10px; letter-spacing: -.02em; }
+.storyLine { position: absolute; z-index: 5; left: 23%; right: 16%; top: 49%; height: 2px; background: linear-gradient(90deg,var(--pink),var(--purple),var(--cyan)); box-shadow: 0 0 18px rgba(123,44,255,.4); transform: translateZ(120px); }
+.storyLine i { position: absolute; top: 50%; width: 13px; height: 13px; border: 3px solid white; border-radius: 50%; background: var(--purple); box-shadow: 0 0 18px rgba(123,44,255,.5); transform: translateY(-50%); }
+.storyLine i:first-child { left: 0; }.storyLine i:nth-child(2) { left: 48%; }.storyLine i:last-child { right: 0; }
+.storyGlassNote { position: absolute; z-index: 8; left: 2%; bottom: 5%; min-width: 215px; padding: 15px 17px; display: flex; align-items: center; gap: 11px; border: 1px solid rgba(255,255,255,.94); border-radius: 21px; color: var(--purple); background: rgba(255,255,255,.68); box-shadow: 0 18px 42px rgba(48,46,130,.14),inset 0 1px white; backdrop-filter: blur(16px); transform: rotateY(8deg) translateZ(100px); }
+.storyGlassNote span { display: grid; gap: 3px; }
+.storyGlassNote b { color: var(--navy); font-size: 11px; }
+.storyGlassNote small { color: #69758f; font-size: 8px; }
+
+@media (min-width: 1800px) {
+  .hero {
+    padding-inline: max(7vw, 110px);
+    grid-template-columns: minmax(660px, .92fr) minmax(760px, 1.08fr);
+    gap: clamp(70px, 6vw, 140px);
+  }
+  .heroCopy { max-width: 830px; }
+  .hero h1 { max-width: 870px; font-size: clamp(88px, 5.35vw, 122px); }
+  .heroLead { max-width: 710px; font-size: clamp(19px, 1.08vw, 24px); }
+  .heroStory { width: min(920px,100%); height: 790px; }
+}
+
 @media (max-width: 1180px) {
   .hero { min-height: 850px; padding-top: 155px; grid-template-columns: minmax(0,1fr) minmax(430px,.9fr); }
   .hero h1 { font-size: clamp(52px,6.2vw,75px); }
@@ -159,6 +237,7 @@
   .heroLead { margin-inline: auto; }
   .heroActions { justify-content: center; }
   .heroSculpture { width: min(680px,100%); min-height: 550px; margin: -15px auto 0; }
+  .heroStory { width: min(760px,100%); height: 650px; margin: 5px auto 0; }
   .storySection, .journeySection { grid-template-columns: 1fr; }
   .storyStatement { position: static; }
   .leadershipStage { gap: 24px; }
@@ -174,6 +253,22 @@
   .heroActions { display: grid; grid-template-columns: 1fr; }
   .primaryButton, .secondaryButton { width: 100%; min-height: 56px; }
   .heroSculpture { min-height: 470px; margin-top: 0; }
+  .heroStory { width: 100%; height: 520px; margin: 34px auto 0; }
+  .storyHalo { inset: 8% -5% 4%; }
+  .storyPortrait { padding: 5px; border-width: 5px; border-radius: 27px; }
+  .storyPortrait { left: 2%; top: 8%; width: 46%; height: 67%; }
+  .storyImage { height: calc(100% - 64px); border-radius: 19px; }
+  .storyCaption { height: 64px; padding: 8px 6px 3px; }
+  .storyCaption small { font-size: 6px; }
+  .storyCaption b { font-size: 10px; }
+  .storySeal { left: 42%; top: 34%; width: 108px; height: 108px; padding: 10px; }
+  .storySeal > span { width: 36px; height: 45px; }
+  .storySeal small { font-size: 4px; }
+  .storySeal b { font-size: 7px; }
+  .storyLine { left: 18%; right: 9%; }
+  .storyGlassNote { left: 0; bottom: 4%; min-width: 164px; padding: 11px 12px; border-radius: 17px; }
+  .storyGlassNote b { font-size: 9px; }
+  .storyGlassNote small { font-size: 6px; }
   .heroOrbitOne { inset: 24px -8% 28px; }
   .heroOrbitTwo { inset: 68px 7% 78px; }
   .heroBalloon { top: 74px; width: 210px; height: 260px; margin-left: -105px; }
@@ -225,6 +320,9 @@
 }
 
 @media (max-width: 420px) {
+  .heroStory { height: 470px; }
+  .storyPortrait { width: 46%; }
+  .storyGlassNote { min-width: 150px; }
   .heroSculpture { min-height: 430px; }
   .heroGlassTag { min-width: 146px; }
   .heroGlassTag svg { width: 15px; }
