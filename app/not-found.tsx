@@ -23,7 +23,6 @@ export default function NotFound() {
           <Link href="/gallery"><Images size={18} aria-hidden="true" /> View gallery <ArrowRight size={17} aria-hidden="true" /></Link>
         </div>
       </main>
-      <Footer />
     </>
   );
 }
