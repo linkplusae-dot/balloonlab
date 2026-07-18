@@ -8,6 +8,7 @@ import { LeadershipShowcase } from "@/components/about/LeadershipShowcase";
 import { BrandValues } from "@/components/about/BrandValues";
 import { CraftJourney } from "@/components/about/CraftJourney";
 import { AboutFinalCta } from "@/components/about/AboutFinalCta";
+import { KhalifaFundPartnership } from "@/components/partners/KhalifaFundPartnership";
 import styles from "./about.module.css";
 import { absoluteUrl, breadcrumbSchema, createPageMetadata } from "@/lib/seo/site";
 
@@ -45,6 +46,7 @@ export default function AboutPage() {
         <BrandStory />
         <LeadershipShowcase />
         <BrandValues />
+        <KhalifaFundPartnership />
         <CraftJourney />
         <AboutFinalCta />
       </main>

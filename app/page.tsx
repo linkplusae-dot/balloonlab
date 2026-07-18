@@ -7,6 +7,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { ScrollReveal } from "./components/ScrollReveal";
 import { ScrollLogoJourney } from "./components/ScrollLogoJourney";
 import { OccasionCylinderCarousel } from "@/components/designs/OccasionCylinderCarousel";
+import { KhalifaFundPartnership } from "@/components/partners/KhalifaFundPartnership";
 import { occasionCategories } from "@/lib/content/designs";
 import { absoluteUrl, createPageMetadata } from "@/lib/seo/site";
 import { FaWhatsapp } from "react-icons/fa6";
@@ -107,6 +108,8 @@ export default function Home() {
           <ScrollReveal className="section-heading"><span>The Balloon Lab difference</span><h2>Thoughtful by design.<br/>Unforgettable by nature.</h2></ScrollReveal>
           <div className="why-grid">{[['✦','Premium Finish','Glossy, vivid and beautifully presented.'],['◉','Photo-Perfect Print','Crisp detail and colors that feel alive.'],['♡','Made With Care','Crafted by hand for your special moment.'],['⌁','UAE-Wide Delivery','Reliable delivery, wherever you celebrate.']].map((x,i)=><ScrollReveal effect="scale" className="why-card" key={x[1]}><span>{x[0]}</span><h3>{x[1]}</h3><p>{x[2]}</p><i>0{i+1}</i></ScrollReveal>)}</div>
         </section>
+
+        <KhalifaFundPartnership />
 
         <section id="designs" className="home-section customize-section">
           <ScrollReveal effect="left" className="customize-visual"><div className="custom-balloon"><Image src="/logo-transparent.png" alt="Custom Balloon Lab balloon" width={1080} height={1350}/></div><span className="color-dot dot-pink"/><span className="color-dot dot-blue"/><span className="color-dot dot-purple"/></ScrollReveal>
