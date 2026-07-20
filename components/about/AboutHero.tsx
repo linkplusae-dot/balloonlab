@@ -33,14 +33,15 @@ export function AboutHero() {
 
       <div className={styles.heroCopy}>
         <motion.p {...entrance(0.18)} className={styles.eyebrow}>
-          <Sparkles size={15} aria-hidden="true" /> The people behind the moments
+          <Sparkles size={15} aria-hidden="true" /> Our story and leadership
         </motion.p>
         <motion.h1 {...entrance(0.27)} id="about-title">
-          We make your memories <span>float.</span>
+          About Balloon Lab <span>UAE</span>
         </motion.h1>
         <motion.p {...entrance(0.38)} className={styles.heroLead}>
-          Balloon Lab is a UAE personalized gifting brand that turns the photos you love into
-          thoughtful balloons for birthdays, love moments, kids, events, and surprises.
+          Balloon Lab UAE is a personalized balloon gifting company in the United Arab Emirates,
+          creating custom photo balloons and celebration designs for birthdays, love, newborns,
+          events, corporate gifting and meaningful surprises.
         </motion.p>
         <motion.div {...entrance(0.48)} className={styles.heroActions}>
           <a href="#leadership" className={styles.primaryButton}>
@@ -74,9 +75,9 @@ export function AboutHero() {
           style={{ zIndex: positionsSwapped ? 3 : 5 }}
         >
           <span className={styles.storyImage}>
-            <Image src="/founder1.jpeg" alt="Mubarak Obaid Al Dhaheri, Founder and CEO of Balloon Lab" fill preload sizes="(max-width: 700px) 58vw, 310px" />
+            <Image src="/mubarak-obaid-al-dhaheri-founder-balloon-lab-uae.webp" alt="Mubarak Obaid Al Dhaheri, Founder and CEO of Balloon Lab UAE" fill preload sizes="(max-width: 700px) 58vw, 310px" />
           </span>
-          <span className={styles.storyCaption}><small>Founder &amp; CEO</small><b>Mubarak Obaid Al Dhaheri</b></span>
+          <span className={styles.storyCaption}><small>Founder and CEO</small><b>Mubarak Obaid Al Dhaheri</b></span>
         </motion.div>
         <motion.div
           className={`${styles.storyPortrait} ${styles.storyPortraitManager}`}
@@ -92,7 +93,7 @@ export function AboutHero() {
           style={{ zIndex: positionsSwapped ? 5 : 3 }}
         >
           <span className={styles.storyImage}>
-            <Image src="/founder2.jpeg" alt="Malik Muhammad, General Manager of Balloon Lab" fill sizes="(max-width: 700px) 48vw, 260px" />
+            <Image src="/malik-muhammad-general-manager-balloon-lab-uae.webp" alt="Malik Muhammad, General Manager of Balloon Lab UAE" fill sizes="(max-width: 700px) 48vw, 260px" />
           </span>
           <span className={styles.storyCaption}><small>General Manager</small><b>Malik Muhammad</b></span>
         </motion.div>

@@ -420,3 +420,75 @@
   .leaderCard,.leaderCardFirst,.leaderCardSecond { position:relative; inset:auto; width:min(82vw,560px); height:500px; margin:0 auto; translate:none; transform:none!important; opacity:1!important; }
   .leadershipSpine,.leadershipFloor,.leadershipMobileCue { display:none; }
 }
+
+.leaderSectionTitle {
+  margin: 7px 0 0;
+  color: #06143d;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  line-height: 1.2;
+}
+
+.aboutInternalLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 22px;
+}
+
+.aboutInternalLinks a {
+  padding: 9px 13px;
+  border: 1px solid rgba(123,44,255,.14);
+  border-radius: 999px;
+  color: #4320a8;
+  background: rgba(255,255,255,.72);
+  box-shadow: 0 8px 22px rgba(61,43,137,.08);
+  font-size: 12px;
+  font-weight: 700;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.aboutInternalLinks a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 13px 28px rgba(61,43,137,.14);
+}
+
+.contactSection {
+  position: relative;
+  padding: 0 clamp(18px,5vw,78px) clamp(110px,12vw,170px);
+}
+
+.contactCard {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: clamp(28px,5vw,58px);
+  border: 1px solid rgba(255,255,255,.88);
+  border-radius: clamp(28px,4vw,48px);
+  background: linear-gradient(145deg,rgba(255,255,255,.9),rgba(238,247,255,.72));
+  box-shadow: 0 32px 80px rgba(49,54,139,.13), inset 0 1px #fff;
+  text-align: center;
+}
+
+.contactCard h2 {
+  margin: 10px 0 16px;
+  color: #06143d;
+  font-size: clamp(2rem,5vw,4.2rem);
+  line-height: 1;
+}
+
+.contactCard > p:not(.sectionKicker) {
+  max-width: 720px;
+  margin: 0 auto;
+  color: #5f6885;
+  line-height: 1.75;
+}
+
+.contactCard > p a { color: #005bff; font-weight: 700; }
+.contactActions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 28px; }
+.contactActions a { display: inline-flex; align-items: center; gap: 8px; min-height: 46px; padding: 0 17px; border: 1px solid rgba(0,91,255,.16); border-radius: 999px; color: #06143d; background: rgba(255,255,255,.84); font-size: 12px; font-weight: 700; box-shadow: 0 10px 24px rgba(47,53,133,.09); }
+
+@media (max-width: 700px) {
+  .leaderInfo .leaderSectionTitle { color: white; font-size: 14px; text-shadow: 0 3px 12px rgba(6,20,61,.35); }
+  .contactSection { padding-bottom: 115px; }
+  .contactActions { display: grid; }
+  .contactActions a { justify-content: center; }
+}

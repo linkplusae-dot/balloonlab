@@ -5,6 +5,7 @@ import Link from "next/link";
 import {
   ArrowUpRight,
   AtSign,
+  Mail,
   MapPin,
   Phone,
   Sparkles,
@@ -15,7 +16,7 @@ import { motion, useReducedMotion, type Variants } from "framer-motion";
 const quickLinks = [
   { label: "Home", href: "/" },
   { label: "Designs", href: "/designs" },
-  { label: "About", href: "/about" },
+  { label: "About Balloon Lab UAE", href: "/about" },
   { label: "How It Works", href: "/how-it-works" },
   { label: "Gallery", href: "/gallery" },
   { label: "Contact", href: "/#contact" },
@@ -63,7 +64,7 @@ export function Footer() {
         custom={-1}
       >
         <div className="footer-stage-copy">
-          <p><Sparkles size={15} aria-hidden="true" /> Balloon Lab · UAE</p>
+          <p><Sparkles size={15} aria-hidden="true" /> Balloon Lab UAE</p>
           <h2 id="footer-heading">Memories were never meant to stay still.</h2>
           <span>We make them exciting and more memorable.</span>
         </div>
@@ -85,11 +86,11 @@ export function Footer() {
 
       <motion.div className="footer-3d-cards" variants={parentVariants}>
         <motion.section className="footer-3d-card footer-brand-card" variants={reduceMotion ? undefined : cardVariants} custom={-1}>
-          <Link href="/" className="footer-brand-lockup" aria-label="Balloon Lab home">
+          <Link href="/" className="footer-brand-lockup" aria-label="Balloon Lab UAE home">
             <span><Image src="/logo-transparent.png" alt="" width={108} height={135} /></span>
-            <strong>Balloon <em>Lab</em></strong>
+            <strong>Balloon <em>Lab UAE</em></strong>
           </Link>
-          <p>Personalized photo balloons crafted for birthdays, events, surprises, and unforgettable moments across the UAE.</p>
+          <p>Balloon Lab UAE creates personalized photo balloons for birthdays, love, newborns, events, corporate gifting and meaningful surprises across the United Arab Emirates.</p>
           <b>Memories Made</b>
         </motion.section>
 
@@ -110,6 +111,7 @@ export function Footer() {
           <h3>Let’s create some joy.</h3>
           <div className="footer-contact-list">
             <a href="tel:+971561315511"><Phone size={16} /><span><small>Call / WhatsApp</small>+971 56 131 5511</span></a>
+            <a href="mailto:balloonlabuae@gmail.com"><Mail size={16} /><span><small>Email</small>balloonlabuae@gmail.com</span></a>
             <a href="https://instagram.com/balloonlabae"><AtSign size={16} /><span><small>Instagram</small>@balloonlabae</span></a>
             <p><MapPin size={16} /><span><small>Find us</small>Office 26, Floor 20, Al Wahda Commercial Tower, P.O 25025 Abu Dhabi, UAE</span></p>
           </div>
@@ -118,7 +120,7 @@ export function Footer() {
       </motion.div>
 
       <motion.div className="footer-3d-bottom" variants={reduceMotion ? undefined : cardVariants} custom={0}>
-        <div><p>© 2026 Balloon Lab. All rights reserved.</p><small>Personalized photo balloons in UAE</small></div>
+        <div><p>© 2026 Balloon Lab UAE. All rights reserved.</p><small>Personalized photo balloons in the United Arab Emirates</small></div>
         <nav aria-label="Social links">
           <a href="https://instagram.com/balloonlabae" rel="me external" aria-label="Balloon Lab on Instagram"><FaInstagram size={18} /></a>
           <a href="https://www.tiktok.com/@balloonlabae" rel="me external" aria-label="Balloon Lab on TikTok"><FaTiktok size={17} /></a>

@@ -11,8 +11,8 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Personalized Photo Balloons UAE | Balloon Lab",
-    template: "%s | Balloon Lab",
+    default: "Personalized Photo Balloons UAE | Balloon Lab UAE",
+    template: "%s | Balloon Lab UAE",
   },
   description: "Create personalized photo balloons for birthdays, love, newborns, events and corporate gifts, crafted by Balloon Lab in Abu Dhabi for moments across the UAE.",
   applicationName: siteConfig.name,
@@ -32,12 +32,12 @@ export const metadata: Metadata = {
     type: "website",
     locale: siteConfig.locale,
     siteName: siteConfig.name,
-    title: "Personalized Photo Balloons UAE | Balloon Lab",
+    title: "Personalized Photo Balloons UAE | Balloon Lab UAE",
     description: "Turn a favourite photo into a personalized balloon for birthdays, love, newborns, events and gifts across the UAE.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Personalized Photo Balloons UAE | Balloon Lab",
+    title: "Personalized Photo Balloons UAE | Balloon Lab UAE",
     description: "Turn a favourite photo into a personalized balloon for meaningful moments across the UAE.",
   },
   robots: {
@@ -66,6 +66,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 "@type": ["Organization", "LocalBusiness"],
                 "@id": `${siteConfig.url}/#organization`,
                 name: siteConfig.name,
+                alternateName: [siteConfig.shortName, "BalloonLab UAE"],
                 url: siteConfig.url,
                 logo: {
                   "@type": "ImageObject",
@@ -76,6 +77,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 slogan: siteConfig.tagline,
                 description: "A UAE personalized gifting brand creating custom photo balloons for birthdays, love, newborns, events, corporate gifting and surprises.",
                 telephone: siteConfig.phoneE164,
+                email: siteConfig.email,
                 address: {
                   "@type": "PostalAddress",
                   streetAddress: "Office 26, Floor 20, Al Wahda Commercial Tower",
@@ -93,13 +95,15 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                   availableLanguage: ["English"],
                 },
                 sameAs: Object.values(siteConfig.social),
+                founder: { "@id": `${absoluteUrl("/about")}#mubarak-obaid-al-dhaheri` },
+                employee: { "@id": `${absoluteUrl("/about")}#malik-muhammad` },
               },
               {
                 "@type": "WebSite",
                 "@id": `${siteConfig.url}/#website`,
                 url: siteConfig.url,
                 name: siteConfig.name,
-                alternateName: "Balloon Lab UAE",
+                alternateName: siteConfig.shortName,
                 description: "Personalized photo balloons and custom balloon gifts in the UAE.",
                 inLanguage: siteConfig.language,
                 publisher: { "@id": `${siteConfig.url}/#organization` },

@@ -14,8 +14,8 @@ export function BrandValues() {
     <section className={styles.valuesSection} aria-labelledby="values-title">
       <RevealOnScroll className={styles.centerHeading}>
         <p className={styles.sectionKicker}>What guides us</p>
-        <h2 id="values-title">The feeling comes first.</h2>
-        <p>Our choices are shaped by the memory behind the balloon—not by decoration alone.</p>
+        <h2 id="values-title">Why Choose Balloon Lab UAE</h2>
+        <p>We combine personal design, clear coordination and thoughtful presentation for celebrations throughout the United Arab Emirates.</p>
       </RevealOnScroll>
       <div className={styles.valuesGrid}>
         {values.map(({ icon: Icon, number, title, text }, index) => (

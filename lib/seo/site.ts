@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 
 export const siteConfig = {
-  name: "Balloon Lab",
-  url: "https://balloonlab.ae",
+  name: "Balloon Lab UAE",
+  shortName: "Balloon Lab",
+  url: "https://www.balloonlab.ae",
   tagline: "Memories Made",
   locale: "en_AE",
   language: "en-AE",
   phoneDisplay: "+971 56 131 5511",
   phoneE164: "+971561315511",
+  email: "balloonlabuae@gmail.com",
   whatsapp: "https://wa.me/971561315511",
   address: "Office 26, Floor 20, Al Wahda Commercial Tower, Abu Dhabi, UAE",
   social: {

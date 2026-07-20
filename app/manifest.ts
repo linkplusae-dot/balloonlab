@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Balloon Lab — Memories Made",
+    name: "Balloon Lab UAE — Memories Made",
     short_name: "Balloon Lab",
     description: "Personalized photo balloons crafted for unforgettable moments across the UAE.",
     start_url: "/",

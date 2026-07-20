@@ -8,19 +8,21 @@ import styles from "@/app/about/about.module.css";
 
 const leaders = [
   {
-    image: "/founder1.jpeg",
+    image: "/mubarak-obaid-al-dhaheri-founder-balloon-lab-uae.webp",
     name: "Mubarak Obaid Al Dhaheri",
-    role: "Founder & CEO",
+    role: "Founder and CEO",
+    heading: "Our Founder and CEO",
     label: "Vision & creative direction",
-    description: "Guiding Balloon Lab’s vision and its promise to make personalized gifting feel truly personal.",
+    description: "Mubarak Obaid Al Dhaheri leads Balloon Lab UAE’s vision, growth and commitment to making personalized balloon gifting feel genuinely personal.",
     icon: Crown,
   },
   {
-    image: "/founder2.jpeg",
+    image: "/malik-muhammad-general-manager-balloon-lab-uae.webp",
     name: "Malik Muhammad",
     role: "General Manager",
+    heading: "Our General Manager",
     label: "Company management & operations",
-    description: "Leading the day-to-day coordination that carries each custom idea from conversation to celebration.",
+    description: "Malik Muhammad oversees Balloon Lab UAE’s daily operations, customer experience and coordination from the first conversation to the completed celebration.",
     icon: ShieldCheck,
   },
 ];
@@ -68,18 +70,19 @@ export function LeadershipShowcase() {
   return (
     <section ref={sectionRef} id="leadership" className={styles.leadershipSection} aria-labelledby="leadership-title">
       <div className={styles.leadershipHeading}>
-        <p className={styles.sectionKicker}><Sparkles size={15} /> Meet the leadership</p>
-        <h2 id="leadership-title">Led with imagination.<br /><span>Built with care.</span></h2>
-        <p>Two complementary perspectives, one shared purpose: making every Balloon Lab moment feel considered from first idea to final surprise.</p>
+        <p className={styles.sectionKicker}><Sparkles size={15} /> The people behind the brand</p>
+        <h2 id="leadership-title">Meet Our Leadership</h2>
+        <p>Balloon Lab UAE is guided by leadership focused on thoughtful design, dependable operations and a clear customer experience.</p>
       </div>
 
       <div className={styles.leadershipScroll}>
         <div className={styles.leadershipStage}>
           <div className={styles.leadershipGlow} aria-hidden="true" />
           <div className={styles.leadershipSpine} aria-hidden="true"><i /><span>01</span><span>02</span></div>
-          {leaders.map(({ image, name, role, label, description, icon: Icon }, index) => (
+          {leaders.map(({ image, name, role, heading, label, description, icon: Icon }, index) => (
             <motion.article
               key={name}
+              id={index === 0 ? "founder" : "general-manager"}
               className={`${styles.leaderCard} ${index === 0 ? styles.leaderCardFirst : styles.leaderCardSecond}`}
               style={reduceMotion ? undefined : isMobile ? mobileCardMotion[index] : cardMotion[index]}
               initial={reduceMotion ? false : { opacity: 0, rotateX: 18, z: -120 }}
@@ -90,7 +93,7 @@ export function LeadershipShowcase() {
               <div className={styles.leaderImage}>
                 <Image
                   src={image}
-                  alt={`${name}, ${role} at Balloon Lab`}
+                  alt={`${name}, ${role} of Balloon Lab UAE`}
                   fill
                   sizes="(max-width: 700px) 86vw, (max-width: 1100px) 44vw, 520px"
                   className={index === 0 ? styles.founderCrop : styles.managerCrop}
@@ -100,6 +103,7 @@ export function LeadershipShowcase() {
               </div>
               <div className={styles.leaderInfo}>
                 <small>{label}</small>
+                <h2 className={styles.leaderSectionTitle}>{heading}</h2>
                 <h3 className={styles.leaderName} style={{
                   background: `linear-gradient(135deg, ${index === 0 ? '#6e8efb' : '#a779e9'} 0%, ${index === 0 ? '#6e8efb' : '#a779e9'} 100%)`,
                   WebkitBackgroundClip: 'text',
