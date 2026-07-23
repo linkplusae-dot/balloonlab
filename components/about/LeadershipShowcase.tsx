@@ -109,7 +109,6 @@ export function LeadershipShowcase() {
       <div className={styles.leadershipScroll}>
         <div className={styles.leadershipStage}>
           <div className={styles.leadershipGlow} aria-hidden="true" />
-          <div className={styles.leadershipSpine} aria-hidden="true"><i /><span>01</span><span>02</span><span>03</span></div>
           {leaders.map(({ image, name, role, heading, label, description, icon: Icon, id, cardClass, cropClass }, index) => (
             <motion.article
               key={name}
@@ -149,7 +148,6 @@ export function LeadershipShowcase() {
             </motion.article>
           ))}
           <p className={styles.leadershipMobileCue}><span /> Scroll to meet the team</p>
-          {/* <div className={styles.leadershipFloor} aria-hidden="true" /> */}
         </div>
       </div>
     </section>
