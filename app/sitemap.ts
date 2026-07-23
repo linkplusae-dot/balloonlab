@@ -18,7 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: absoluteUrl("/designs"), lastModified, changeFrequency: "weekly", priority: 0.9, images: [absoluteUrl("/occasion-birthdays.png"), absoluteUrl("/occasion-love.png"), absoluteUrl("/occasion-kids.png"), absoluteUrl("/occasion-events.png"), absoluteUrl("/occasion-corporate.png"), absoluteUrl("/occasion-surprise.png")] },
     { url: absoluteUrl("/gallery"), lastModified, changeFrequency: "weekly", priority: 0.85, images: [absoluteUrl("/balloon-gallery.png"), absoluteUrl("/occasion-birthdays.png"), absoluteUrl("/occasion-love.png"), absoluteUrl("/occasion-kids.png"), absoluteUrl("/occasion-events.png"), absoluteUrl("/occasion-corporate.png"), absoluteUrl("/occasion-surprise.png")] },
     { url: absoluteUrl("/how-it-works"), lastModified, changeFrequency: "monthly", priority: 0.8, images: [absoluteUrl("/balloon-gallery.png")] },
-    { url: absoluteUrl("/about"), lastModified, changeFrequency: "monthly", priority: 0.8, images: [absoluteUrl("/mubarak-obaid-al-dhaheri-founder-balloon-lab-uae.webp"), absoluteUrl("/malik-muhammad-general-manager-balloon-lab-uae.webp")] },
+    { url: absoluteUrl("/about"), lastModified, changeFrequency: "monthly", priority: 0.8, images: [absoluteUrl("/mubarak-obaid-al-dhaheri-founder-balloon-lab-uae.webp"), absoluteUrl("/malik-muhammad-general-manager-balloon-lab-uae.webp"), absoluteUrl("/zain-mustafa-operational-manager-balloon-lab-uae.webp")] },
     ...employeePages,
   ];
 }

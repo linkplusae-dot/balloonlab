@@ -96,7 +96,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 },
                 sameAs: Object.values(siteConfig.social),
                 founder: { "@id": `${absoluteUrl("/about")}#mubarak-obaid-al-dhaheri` },
-                employee: { "@id": `${absoluteUrl("/about")}#malik-muhammad` },
+                employee: [
+                  { "@id": `${absoluteUrl("/about")}#malik-muhammad` },
+                  { "@id": `${absoluteUrl("/about")}#zain-mustafa` },
+                ],
               },
               {
                 "@type": "WebSite",

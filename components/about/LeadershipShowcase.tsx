@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Crown, ShieldCheck, Sparkles } from "lucide-react";
+import { Crown, ShieldCheck, Sparkles, Workflow } from "lucide-react";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import styles from "@/app/about/about.module.css";
@@ -15,6 +15,9 @@ const leaders = [
     label: "Vision & creative direction",
     description: "Mubarak Obaid Al Dhaheri leads Balloon Lab UAE’s vision, growth and commitment to making personalized balloon gifting feel genuinely personal.",
     icon: Crown,
+    id: "founder",
+    cardClass: styles.leaderCardFirst,
+    cropClass: styles.founderCrop,
   },
   {
     image: "/malik-muhammad-general-manager-balloon-lab-uae.webp",
@@ -24,6 +27,21 @@ const leaders = [
     label: "Company management & operations",
     description: "Malik Muhammad oversees Balloon Lab UAE’s daily operations, customer experience and coordination from the first conversation to the completed celebration.",
     icon: ShieldCheck,
+    id: "general-manager",
+    cardClass: styles.leaderCardSecond,
+    cropClass: styles.managerCrop,
+  },
+  {
+    image: "/zain-mustafa-operational-manager-balloon-lab-uae.png",
+    name: "Zain Mustafa",
+    role: "Operational Manager",
+    heading: "Our Operational Manager",
+    label: "Operational coordination & delivery",
+    description: "Zain Mustafa manages Balloon Lab UAE’s operational workflows, coordinating day-to-day execution so each customer order moves smoothly from planning to preparation.",
+    icon: Workflow,
+    id: "operational-manager",
+    cardClass: styles.leaderCardThird,
+    cropClass: styles.operationalManagerCrop,
   },
 ];
 
@@ -31,6 +49,7 @@ export function LeadershipShowcase() {
   const sectionRef = useRef<HTMLElement>(null);
   const reduceMotion = useReducedMotion();
   const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
     const query = window.matchMedia("(max-width: 700px)");
     const update = () => setIsMobile(query.matches);
@@ -38,6 +57,7 @@ export function LeadershipShowcase() {
     query.addEventListener("change", update);
     return () => query.removeEventListener("change", update);
   }, []);
+
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "end start"] });
 
   const firstY = useTransform(scrollYProgress, [0.15, 0.52, 0.84], [80, 0, -80]);
@@ -46,26 +66,37 @@ export function LeadershipShowcase() {
   const secondY = useTransform(scrollYProgress, [0.2, 0.58, 0.9], [145, 0, -32]);
   const secondRotate = useTransform(scrollYProgress, [0.2, 0.58, 0.9], [12, 0, 7]);
   const secondScale = useTransform(scrollYProgress, [0.2, 0.58, 0.9], [0.86, 1, 0.95]);
+  const thirdY = useTransform(scrollYProgress, [0.24, 0.62, 0.92], [95, 0, -64]);
+  const thirdRotate = useTransform(scrollYProgress, [0.24, 0.62, 0.92], [-10, 0, -6]);
+  const thirdScale = useTransform(scrollYProgress, [0.24, 0.62, 0.92], [0.89, 1, 0.93]);
 
-  const firstMobileX = useTransform(scrollYProgress, [0.18, 0.45, 0.58], [0, 0, -150]);
-  const firstMobileY = useTransform(scrollYProgress, [0.18, 0.45, 0.58], [55, 0, -45]);
-  const firstMobileRotate = useTransform(scrollYProgress, [0.18, 0.48, 0.58], [-7, 0, -15]);
-  const firstMobileScale = useTransform(scrollYProgress, [0.18, 0.45, 0.58], [0.9, 1, 0.86]);
-  const firstMobileOpacity = useTransform(scrollYProgress, [0.18, 0.48, 0.6], [1, 1, 0]);
-  const secondMobileX = useTransform(scrollYProgress, [0.42, 0.6, 0.84], [150, 0, 0]);
-  const secondMobileY = useTransform(scrollYProgress, [0.42, 0.6, 0.84], [65, 0, -15]);
-  const secondMobileRotate = useTransform(scrollYProgress, [0.42, 0.62, 0.84], [15, 0, -3]);
-  const secondMobileScale = useTransform(scrollYProgress, [0.42, 0.62, 0.84], [0.86, 1, 1]);
-  const secondMobileOpacity = useTransform(scrollYProgress, [0.4, 0.55, 0.84], [0, 1, 1]);
+  const firstMobileX = useTransform(scrollYProgress, [0.1, 0.3, 0.43], [0, 0, -150]);
+  const firstMobileY = useTransform(scrollYProgress, [0.1, 0.3, 0.43], [55, 0, -45]);
+  const firstMobileRotate = useTransform(scrollYProgress, [0.1, 0.31, 0.43], [-7, 0, -15]);
+  const firstMobileScale = useTransform(scrollYProgress, [0.1, 0.3, 0.43], [0.9, 1, 0.86]);
+  const firstMobileOpacity = useTransform(scrollYProgress, [0.1, 0.34, 0.46], [1, 1, 0]);
+  const secondMobileX = useTransform(scrollYProgress, [0.32, 0.5, 0.68], [150, 0, -150]);
+  const secondMobileY = useTransform(scrollYProgress, [0.32, 0.5, 0.68], [65, 0, -45]);
+  const secondMobileRotate = useTransform(scrollYProgress, [0.32, 0.5, 0.68], [15, 0, -15]);
+  const secondMobileScale = useTransform(scrollYProgress, [0.32, 0.5, 0.68], [0.86, 1, 0.86]);
+  const secondMobileOpacity = useTransform(scrollYProgress, [0.3, 0.43, 0.7], [0, 1, 0]);
+  const thirdMobileX = useTransform(scrollYProgress, [0.6, 0.78, 0.96], [150, 0, 0]);
+  const thirdMobileY = useTransform(scrollYProgress, [0.6, 0.78, 0.96], [65, 0, -15]);
+  const thirdMobileRotate = useTransform(scrollYProgress, [0.6, 0.78, 0.96], [15, 0, -3]);
+  const thirdMobileScale = useTransform(scrollYProgress, [0.6, 0.78, 0.96], [0.86, 1, 1]);
+  const thirdMobileOpacity = useTransform(scrollYProgress, [0.58, 0.72, 0.96], [0, 1, 1]);
 
   const cardMotion = [
     { y: firstY, rotateY: firstRotate, scale: firstScale },
     { y: secondY, rotateY: secondRotate, scale: secondScale },
+    { y: thirdY, rotateY: thirdRotate, scale: thirdScale },
   ];
   const mobileCardMotion = [
     { x: firstMobileX, y: firstMobileY, rotateY: firstMobileRotate, scale: firstMobileScale, opacity: firstMobileOpacity },
     { x: secondMobileX, y: secondMobileY, rotateY: secondMobileRotate, scale: secondMobileScale, opacity: secondMobileOpacity },
+    { x: thirdMobileX, y: thirdMobileY, rotateY: thirdMobileRotate, scale: thirdMobileScale, opacity: thirdMobileOpacity },
   ];
+  const nameColors = ["#6e8efb", "#a779e9", "#6e8efb"];
 
   return (
     <section ref={sectionRef} id="leadership" className={styles.leadershipSection} aria-labelledby="leadership-title">
@@ -78,12 +109,12 @@ export function LeadershipShowcase() {
       <div className={styles.leadershipScroll}>
         <div className={styles.leadershipStage}>
           <div className={styles.leadershipGlow} aria-hidden="true" />
-          <div className={styles.leadershipSpine} aria-hidden="true"><i /><span>01</span><span>02</span></div>
-          {leaders.map(({ image, name, role, heading, label, description, icon: Icon }, index) => (
+          <div className={styles.leadershipSpine} aria-hidden="true"><i /><span>01</span><span>02</span><span>03</span></div>
+          {leaders.map(({ image, name, role, heading, label, description, icon: Icon, id, cardClass, cropClass }, index) => (
             <motion.article
               key={name}
-              id={index === 0 ? "founder" : "general-manager"}
-              className={`${styles.leaderCard} ${index === 0 ? styles.leaderCardFirst : styles.leaderCardSecond}`}
+              id={id}
+              className={`${styles.leaderCard} ${cardClass}`}
               style={reduceMotion ? undefined : isMobile ? mobileCardMotion[index] : cardMotion[index]}
               initial={reduceMotion ? false : { opacity: 0, rotateX: 18, z: -120 }}
               whileInView={{ opacity: 1, rotateX: 0, z: 0 }}
@@ -95,21 +126,22 @@ export function LeadershipShowcase() {
                   src={image}
                   alt={`${name}, ${role} of Balloon Lab UAE`}
                   fill
-                  sizes="(max-width: 700px) 86vw, (max-width: 1100px) 44vw, 520px"
-                  className={index === 0 ? styles.founderCrop : styles.managerCrop}
+                  sizes="(max-width: 700px) 86vw, (max-width: 1100px) 30vw, 410px"
+                  className={cropClass}
                 />
-                <span className={styles.leaderNumber}>0{index + 1}</span>
                 <span className={styles.leaderRolePill}><Icon size={15} /> {role}</span>
               </div>
               <div className={styles.leaderInfo}>
-                <small>{label}</small>
                 <h2 className={styles.leaderSectionTitle}>{heading}</h2>
-                <h3 className={styles.leaderName} style={{
-                  background: `linear-gradient(135deg, ${index === 0 ? '#6e8efb' : '#a779e9'} 0%, ${index === 0 ? '#6e8efb' : '#a779e9'} 100%)`,
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  width: 'fit-content',
-                }}>
+                <h3
+                  className={styles.leaderName}
+                  style={{
+                    background: `linear-gradient(135deg, ${nameColors[index]} 0%, ${nameColors[index]} 100%)`,
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    width: "fit-content",
+                  }}
+                >
                   {name}
                 </h3>
                 <p>{description}</p>
@@ -117,7 +149,7 @@ export function LeadershipShowcase() {
             </motion.article>
           ))}
           <p className={styles.leadershipMobileCue}><span /> Scroll to meet the team</p>
-          <div className={styles.leadershipFloor} aria-hidden="true" />
+          {/* <div className={styles.leadershipFloor} aria-hidden="true" /> */}
         </div>
       </div>
     </section>

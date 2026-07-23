@@ -62,7 +62,17 @@ Implemented on 20 July 2026.
 
 ## Deployment follow-up
 
-- Ensure the hosting/CDN layer redirects HTTP to HTTPS before the application.
+- In Vercel project **Settings → Domains**, keep `www.balloonlab.ae` as the primary production domain and configure `balloonlab.ae` to redirect to it.
+- Ensure Vercel sends non-www requests directly to their HTTPS www equivalents.
 - After deployment, test the About URL and structured data with Google Rich Results Test and Schema.org Validator.
 - In Google Search Console, submit `https://www.balloonlab.ae/sitemap.xml`, inspect the About URL and request indexing.
 - Keep the organization name, address, phone, email and social URLs identical across Google Business Profile and verified third-party profiles.
+
+## Redirect-error remediation
+
+- The preferred indexed hostname is `www.balloonlab.ae`.
+- The Next.js host redirect sends `balloonlab.ae/:path*` directly to `https://www.balloonlab.ae/:path*` with a permanent 308 and preserves paths and query strings.
+- The global metadata base, canonical tags, Open Graph URLs, JSON-LD IDs and URLs, robots host, sitemap reference and sitemap entries use `https://www.balloonlab.ae`.
+- Next.js continues to normalize a trailing slash to the no-trailing-slash route with one permanent 308.
+- There is no middleware, proxy file or `vercel.json` competing with the rule.
+- The production Vercel primary-domain setting should remain on `www.balloonlab.ae`.

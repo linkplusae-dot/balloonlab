@@ -36,12 +36,10 @@ export function AboutHero() {
           <Sparkles size={15} aria-hidden="true" /> Our story and leadership
         </motion.p>
         <motion.h1 {...entrance(0.27)} id="about-title">
-          About Balloon Lab <span>UAE</span>
+           <span>Mubarak Obaid Al Dhaheri  </span>
         </motion.h1>
         <motion.p {...entrance(0.38)} className={styles.heroLead}>
-          Balloon Lab UAE is a personalized balloon gifting company in the United Arab Emirates,
-          creating custom photo balloons and celebration designs for birthdays, love, newborns,
-          events, corporate gifting and meaningful surprises.
+          Founded by <b>Mubarak Obaid Al Dhaheri</b> and led by <b>General Manager Malik Muhammad</b>, Balloon Lab UAE is a personalized balloon company that creates memorable celebrations across the United Arab Emirates. Our team, including <b>Operational Manager Zain Mustafa</b>, is dedicated to delivering unique balloon gifts and experiences that bring joy to every occasion.
         </motion.p>
         <motion.div {...entrance(0.48)} className={styles.heroActions}>
           <a href="#leadership" className={styles.primaryButton}>
@@ -97,12 +95,7 @@ export function AboutHero() {
           </span>
           <span className={styles.storyCaption}><small>General Manager</small><b>Malik Muhammad</b></span>
         </motion.div>
-        <div className={styles.storySeal}>
-          <span><Image src="/logo-transparent.png" alt="" width={108} height={135} /></span>
-          <small>UAE personalized gifting</small>
-          <b>Memories Made</b>
-        </div>
-        <div className={styles.storyLine} aria-hidden="true"><i /><i /><i /></div>
+       
         <div className={styles.storyGlassNote}>
           <Heart size={17} fill="currentColor" />
           <span><b>People first</b><small>Personal from idea to reveal</small></span>

@@ -39,7 +39,6 @@ export function HowItWorksHero() {
         transition={{ type: "spring", stiffness: 50, damping: 17, delay: .26 }}
         aria-label="Your memory moving through the Balloon Lab creative process"
       >
-        <div className={styles.stageOrbit} aria-hidden="true" />
         <motion.div className={`${styles.stageCard} ${styles.stageCardPhoto}`} animate={reduceMotion ? undefined : { y: [0,-8,0], rotateZ: [-6,-3,-6] }} transition={{ duration: 5.2, repeat: Infinity, ease: "easeInOut" }}>
           <div><Image src="/occasion-love.png" alt="A meaningful photo selected for a personalized balloon" fill loading="eager" sizes="220px" /></div>
           <span><Camera size={14} /> 01 · Your memory</span>
@@ -53,7 +52,6 @@ export function HowItWorksHero() {
           <div><Image src="/balloon-gallery.png" alt="Finished personalized photo balloons ready for a celebration" fill preload sizes="300px" /></div>
           <span><Sparkles size={14} /> 06 · The reveal</span>
         </motion.div>
-        <div className={styles.stageTrail} aria-hidden="true"><b /><b /><b /></div>
       </motion.div>
     </section>
   );

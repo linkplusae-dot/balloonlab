@@ -43,7 +43,7 @@ export const employees: EmployeeRecord[] = [
     slug: "emp003",
     employeeId: "EMP003",
     name: "Zain Mustafa",
-    role: "Office Manager",
+    role: "Operational Manager",
     company: "Balloon Lab UAE",
     email: "balloonlabuae@gmail.com",
     phone: "+971561315511",
